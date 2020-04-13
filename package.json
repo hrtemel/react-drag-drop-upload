@@ -1,0 +1,68 @@
+{
+  "name": "@react-drag-drop-upload/core",
+  "version": "0.1.22",
+  "description": "Fullscreen drag drop upload component for react",
+  "scripts": {
+    "build": "npm run build:tsc",
+    "build:tsc": "tsc -d",
+    "prebuild": "npm run prebuild:clean && npm run prebuild:version",
+    "prebuild:clean": "rimraf es",
+    "prebuild:version": "npm --no-git-tag-version version patch",
+    "postbuild": "npm run postbuild:copy && npm run postbuild:clean",
+    "postbuild:copy": "copy-files-from-to",
+    "postbuild:clean": "rimraf es/WidgetTypes.js"
+  },
+  "copyFiles": [
+    {
+      "from": "package.json",
+      "to": "es/package.json"
+    },
+    {
+      "from": "README.md",
+      "to": "es/README.md"
+    }
+  ],
+  "main": "index.js",
+  "types": "index.d.ts",
+  "engineStrict": false,
+  "engines": {
+    "npm": ">=2.14.7",
+    "node": ">=6"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "dependencies": {
+    "html-dir-content": "^0.3.1",
+    "react": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "@types/react": "^16.9.32",
+    "babel-eslint": "^10.0.1",
+    "copy-files-from-to": "^2.3.0",
+    "eslint": "^5.14.1",
+    "eslint-plugin-react": "^7.4.0",
+    "typescript": "^3.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hrtemel/cross-env-rjsf-core.git"
+  },
+  "author": "Haydar Rıdvan TEMEL <hrtemel@gmail.com>",
+  "keywords": [
+    "react",
+    "form",
+    "json-schema",
+    "react-native",
+    "material-ui",
+    "fabric-ui",
+    "ant-design",
+    "bootstrap"
+  ],
+  "license": "MIT",
+  "url": "https://github.com/hrtemel/cross-env-rjsf-core.git"
+}
